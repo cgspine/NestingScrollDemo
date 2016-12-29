@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:titleTextColor="@color/white"/>
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/scrollLayout"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <View
+            android:id="@+id/book_header"
+            android:layout_width="120dp"
+            android:layout_height="150dp"
+            android:background="@color/gray"/>
+        <LinearLayout
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white">
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout"
+                android:background="@drawable/list_item_bg_with_border_top_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_layout_height"
+                android:fillViewport="true"/>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</FrameLayout>

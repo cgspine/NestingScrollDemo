@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="header_view" format="reference"/>
+    <attr name="target_view" format="reference"/>
+    <attr name="header_init_offset" format="dimension"/>
+    <attr name="target_init_offset" format="dimension"/>
+    <declare-styleable name="EventDispatchPlanLayout">
+        <attr name="header_view"/>
+        <attr name="target_view"/>
+        <attr name="header_init_offset"/>
+        <attr name="target_init_offset"/>
+    </declare-styleable>
+
+    <declare-styleable name="NestingScrollPlanLayout">
+        <attr name="header_view"/>
+        <attr name="target_view"/>
+        <attr name="header_init_offset"/>
+        <attr name="target_init_offset"/>
+    </declare-styleable>
+</resources>
