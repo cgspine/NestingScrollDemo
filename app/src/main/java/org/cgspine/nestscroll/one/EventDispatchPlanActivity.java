@@ -31,6 +31,7 @@ public class EventDispatchPlanActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
+            overridePendingTransition(R.anim.slide_still, R.anim.slide_out_right);
         }
 
         return super.onOptionsItemSelected(item);

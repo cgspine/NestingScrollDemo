@@ -42,15 +42,15 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        mHeaderView = findViewById(R.id.book_header);
-        CoordinatorLayout.LayoutParams headerLp = (CoordinatorLayout.LayoutParams) mHeaderView
-                .getLayoutParams();
-        headerLp.setBehavior(new CoverBehavior(Util.dp2px(this, 30), 0));
+    mHeaderView = findViewById(R.id.book_header);
+    CoordinatorLayout.LayoutParams headerLp = (CoordinatorLayout.LayoutParams) mHeaderView
+            .getLayoutParams();
+    headerLp.setBehavior(new CoverBehavior(Util.dp2px(this, 30), 0));
 
-        mTargetLayout = (LinearLayout) findViewById(R.id.scroll_view);
-        CoordinatorLayout.LayoutParams targetLp = (CoordinatorLayout.LayoutParams) mTargetLayout
-                .getLayoutParams();
-        targetLp.setBehavior(new TargetBehavior(this, Util.dp2px(this, 70), 0));
+    mTargetLayout = (LinearLayout) findViewById(R.id.scroll_view);
+    CoordinatorLayout.LayoutParams targetLp = (CoordinatorLayout.LayoutParams) mTargetLayout
+            .getLayoutParams();
+    targetLp.setBehavior(new TargetBehavior(this, Util.dp2px(this, 70), 0));
 
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -62,6 +62,7 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
+            overridePendingTransition(R.anim.slide_still, R.anim.slide_out_right);
         }
 
         return super.onOptionsItemSelected(item);

@@ -36,15 +36,18 @@ public class MainActivity extends AppCompatActivity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = null;
                 if(position == 0){
-                    Intent intent = new Intent(MainActivity.this, EventDispatchPlanActivity.class);
-                    startActivity(intent);
+                    intent = new Intent(MainActivity.this, EventDispatchPlanActivity.class);
                 } else if(position == 1){
-                    Intent intent = new Intent(MainActivity.this, NestingScrollActivity.class);
-                    startActivity(intent);
+                    intent = new Intent(MainActivity.this, NestingScrollActivity.class);
                 } else if(position == 2){
-                    Intent intent = new Intent(MainActivity.this, CoordinatorLayoutActivity.class);
+                    intent = new Intent(MainActivity.this, CoordinatorLayoutActivity.class);
+                }
+
+                if(intent != null){
                     startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_still);
                 }
             }
         });
