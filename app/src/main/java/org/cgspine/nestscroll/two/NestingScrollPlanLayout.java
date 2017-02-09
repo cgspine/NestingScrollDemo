@@ -254,7 +254,7 @@ public class NestingScrollPlanLayout extends ViewGroup implements NestedScrollin
         } else if (mTargetCurrentOffset <= mTargetEndOffset) {
             headerTarget = mHeaderEndOffset;
         } else {
-            float percent = (mTargetCurrentOffset - mTargetEndOffset) * 1.0f / mTargetInitOffset - mTargetEndOffset;
+            float percent = (mTargetCurrentOffset - mTargetEndOffset) * 1.0f / (mTargetInitOffset - mTargetEndOffset);
             headerTarget = (int) (mHeaderEndOffset + percent * (mHeaderInitOffset - mHeaderEndOffset));
         }
         ViewCompat.offsetTopAndBottom(mHeaderView, headerTarget - mHeaderCurrentOffset);
